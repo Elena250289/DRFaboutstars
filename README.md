@@ -1,0 +1,2 @@
+# DRFaboutstars
+Учебный проект
