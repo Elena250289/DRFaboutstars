@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# Добавляем приложение 'women.apps.WomenConfig' и rest_framework
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -125,3 +125,14 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Здесь указано, что используется JSON для обмена информацией между
+# клиентами и сервером, а также подключается браузерное API
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        # Если данную строчку убрать, 
+        # то пропадёт возможность редактирования в браузере.
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ]
+}

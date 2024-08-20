@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import Women
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
+from rest_framework.response import Response
 
 
 # class WomenModel:
@@ -9,16 +10,12 @@ from rest_framework.parsers import JSONParser
 #         self.title = title
 #         self.content = content 
 
-
-class WomenSerializer(serializers.Serializer):
-    title = serializers.CharField(max_length=255)
-    content = serializers.CharField()
-    time_create = serializers.DateTimeField(read_only=True)
-    time_update = serializers.DateTimeField(read_only=True)
-    is_published = serializers.BooleanField(default=True)
-    cat_id = serializers.IntegerField()
-
-
+# Сериализатор который работает с моделями и отправляет уже ответ в JSON формате
+class WomenSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Women
+        fields = ("title", "content", "cat")
+    
 
 # def encode():
 #     model = WomenModel('Angelina Jolie', 'Content: Angelina Jolie')
