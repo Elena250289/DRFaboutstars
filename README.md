@@ -3,7 +3,8 @@
 </div>
 
 # DRFaboutstars
-Учебный проект где учусь работать c Django REST Framework. 
+Учебный проект где учусь работать c Django REST Framework.
+ПОКА НЕ ГОТОВ!!! 
 
 **DRFaboutstars** проект предоставляет информацию о звездах кино и  эстрады.*
 <div id="header" align="center">
@@ -19,7 +20,7 @@
 
 1.Клонирование репозитория
 ```
-git clone git@github.com:ваш-аккаунт-на-гитхабе/api_yamdb.git
+git clone https://github.com/ваш-аккаунт-на-гитхабе/DRFaboutstars.git
 ```
 
 Откройте в своем редакторе кода локальный проекта из репозитория GitHub, клонированного ранее
@@ -45,4 +46,5 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-
+## Автор
+**Елена Кучеренко**
