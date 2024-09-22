@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
  
 # Создаем модели, по сути таблица,
 # с нужными нам полями(после создать и выполнить миграции)
@@ -10,7 +12,8 @@ class Women(models.Model):
     is_published = models.BooleanField(default=True)
     # Таблица Women будет связана с таблицей Category
     cat = models.ForeignKey('Category', on_delete=models.PROTECT, null=True)
- 
+    user =models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE)
+
     def __str__(self):
         return self.title
  
